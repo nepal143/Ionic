@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/logos-01.svg" />
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app">
 
     <application
         android:allowBackup="true"
@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Firebase Notification Icon -->
+        <meta-data 
+            android:name="com.google.firebase.messaging.default_notification_icon" 
+            android:resource="@mipmap/ic_notification" /> <!-- Use a valid drawable resource -->
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation"
@@ -32,11 +37,10 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
 
     <!-- Permissions -->
-
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
