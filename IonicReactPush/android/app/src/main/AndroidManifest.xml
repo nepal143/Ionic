@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/logos-01.svg" />
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

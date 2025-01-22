@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720356687473",
+    "project_id": "capacitortry",
+    "storage_bucket": "capacitortry.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720356687473:android:2c0166a29224912f4d25d0",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRW6EbGdq5BM3eG4nBtGNTMFzdvcgCZZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
