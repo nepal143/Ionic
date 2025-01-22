@@ -2,18 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "com.example.app"
-    compileSdk 35 // Updated to a valid compile SDK version
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.example.app"
-        minSdkVersion 21 // Ensure it's compatible with libraries
-        targetSdkVersion 35 // Match the compile SDK
+        minSdkVersion 21 // Ensure this matches the plugins' requirements
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        aaptOptions {
-            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
-        }
     }
 
     buildTypes {
@@ -22,9 +19,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 repositories {
+    google()
+    mavenCentral()
     flatDir {
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
@@ -32,14 +36,15 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:1.6.1" // Fixed to a specific version
-    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0" // Specify version
-    implementation "androidx.core:core-splashscreen:1.0.1" // Specify version
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+    implementation "androidx.core:core-splashscreen:1.0.1"
     implementation project(':capacitor-android')
-    testImplementation "junit:junit:4.13.2" // Fixed version
-    androidTestImplementation "androidx.test.ext:junit:1.1.5" // Fixed version
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1" // Fixed version
     implementation project(':capacitor-cordova-android-plugins')
+
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
 }
 
 apply from: 'capacitor.build.gradle'
