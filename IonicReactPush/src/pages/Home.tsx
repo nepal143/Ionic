@@ -23,7 +23,7 @@ export default function PushNotificationsContainer() {
             } 
             else {
               register();
-            }
+            } 
           });
     },[])
     
